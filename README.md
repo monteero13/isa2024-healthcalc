@@ -37,3 +37,9 @@ Health calculator
 ### · Test de uso estándar en mujeres: En el caso de especificar entradas estándares con el género femenino, se espera evaluar el resultado.
 
 ### · Test de edad errónea: En el caso de especificar una entrada de edad inferior a 0 o superior a 100, se espera un error saltando una excepción.
+
+## Captura de pantalla del resultado de ejecutar los tests
+
+###
+
+![Casos de prueba pasados](Casosdeprueba.jpg)
