@@ -43,3 +43,9 @@ Health calculator
 ###
 
 ![Casos de prueba pasados](Casosdeprueba.jpg)
+
+## Captura de pantalla del registro de instantáneas (commits) que he ido realizando durante el desarrollo de la práctica:
+
+###     
+
+![Commits](Commits.jpg)
