@@ -1,0 +1,29 @@
+
+Nombre: Calcular BMI
+Actor principal: Usuario
+Ámbito: Aplicación // Calculadora de la salud
+Nivel: Summary
+Stakeholders e intereses: 
+	- Usuario: Poder realizar el cálculo de su índice de masa corporal
+	- Personal sanitario: Poder realizar seguimiento al paciente
+Precondiciones:
+	- El usuario tiene acceso a la aplicación de la calculadora de salud.
+	- El usuario tiene los datos necesarios para calcular el índice de masa corporal (BMI), como peso y altura.
+Garantías mínimas:
+	- La aplicación debe proporcionar una interfaz clara y fácil de usar para que el usuario pueda introducir su peso y altura.
+	- La aplicación debe realizar correctamente el cálculo del índice de masa corporal (BMI) utilizando la fórmula estándar.
+	- La aplicación debe mostrar el resultado del cálculo del BMI de forma clara y legible para el usuario.
+Garantía de éxito:
+	- El usuario puede calcular con éxito su índice de masa corporal (BMI) utilizando la aplicación de la calculadora de salud.
+Escenario principal:
+	- El usuario abre la aplicación de la calculadora de salud.
+	- El usuario selecciona la opción de "Calcular BMI" desde la interfaz de la aplicación.
+	- El usuario introduce su peso y altura en los campos correspondientes.
+	- La aplicación realiza el cálculo del índice de masa corporal (BMI) utilizando la fórmula estándar: BMI = peso (kg) / (altura (m))^2.
+	- La aplicación muestra el resultado del cálculo del BMI al usuario.
+Escenarios alternativos:
+	- Si el usuario no introduce valores válidos para el peso y la altura (por ejemplo, valores negativos o cero), la aplicación muestra un mensaje de error y solicita al usuario que introduzca valores válidos.
+	- Si la aplicación encuentra algún error durante el cálculo del BMI, muestra un mensaje de error indicando que no se puede calcular el BMI en este momento y solicita al usuario que lo intente de nuevo más tarde.
+Extensiones:
+	- La aplicación permite al usuario guardar los resultados del cálculo del BMI para su referencia futura.
+	- La aplicación proporciona consejos o recomendaciones de salud basadas en el resultado del cálculo del BMI, como sugerencias para mejorar la dieta o aumentar la actividad física si el BMI está fuera del rango saludable.
