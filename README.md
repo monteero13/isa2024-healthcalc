@@ -1,5 +1,8 @@
 # isa2024-healtcalc
 Health calculator
+
+# Práctica 1
+
 # Casos de prueba para la calculadora
 
 ## Tests para el método *idealBodyWeight(int height, char gender): float*:
@@ -49,3 +52,10 @@ Health calculator
 ###     
 
 ![Commits](Commits.jpg)
+
+# Práctica 2
+
+![Diagrama de casos de uso](doc/Diagrama de casos de uso.PNG)
+
+###
+
