@@ -55,7 +55,7 @@ Health calculator
 
 # Práctica 2
 
-![Diagrama de casos de uso](doc/Diagrama de casos de uso.jpg)
+![Diagrama de casos de uso](doc/Diagrama_de_casos_de_uso.jpg)
 
 ###
 
