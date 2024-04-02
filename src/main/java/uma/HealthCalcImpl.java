@@ -1,4 +1,4 @@
-package healthcalc;
+package uma;
 
 public class HealthCalcImpl implements HealthCalc {
 	@Override
@@ -16,7 +16,7 @@ public class HealthCalcImpl implements HealthCalc {
 			throw new IllegalArgumentException("Solo se acepta entradas de género 'H' para hombres y 'M' para mujeres");
 		} else {
 			if (genero == 'H') {
-				return height - 100 - ((height - 150) / 4);
+				return height - 100 - ((height - 150) / 4f);
 			} else {
 				return height - 100 - ((height - 150) / 2.5f);
 			}

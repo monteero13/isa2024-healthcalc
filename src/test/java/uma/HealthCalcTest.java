@@ -1,8 +1,9 @@
-package healthcalc;
+package uma;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import uma.HealthCalcImpl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -39,26 +40,26 @@ public class HealthCalcTest {
 	@Test
 	@DisplayName("Test de uso estándar en hombres.")
 	public void test_avg_menIBW() throws Exception{
-		float IBW = 190 - 100 - ((190 - 150) / 4);
+		float IBW = 190 - 100 - ((190 - 150) / 4f);
 		assertEquals(IBW, c.idealWeight(190, 'H'));
 
-		IBW = 157 - 100 - ((157 - 150) / 4);
+		IBW = 157 - 100 - ((157 - 150) / 4f);
 		assertEquals(IBW, c.idealWeight(157, 'H'));
 
-		IBW = 222 - 100 - ((222 - 150) / 4);
+		IBW = 222 - 100 - ((222 - 150) / 4f);
 		assertEquals(IBW, c.idealWeight(222, 'H'));
 	}
 
 	@Test
 	@DisplayName("Test de uso estándar en mujeres")
 	public void test_avg_womenIBW() throws Exception{
-		float IBW = (float) (104 - 100 - ((104 - 150) / 2.5));
+		float IBW = (float) (104 - 100 - ((104 - 150) / 2.5f));
 		assertEquals(IBW, c.idealWeight(104, 'M'));
 
-		IBW = (float) (160 - 100 - ((160 - 150) / 2.5));
+		IBW = (float) (160 - 100 - ((160 - 150) / 2.5f));
 		assertEquals(IBW, c.idealWeight(160, 'M'));
 
-		IBW = (float) (243 - 100 - ((243 - 150) / 2.5));
+		IBW = (float) (243 - 100 - ((243 - 150) / 2.5f));
 		assertEquals(IBW, c.idealWeight(243, 'M'));
 	}
 
