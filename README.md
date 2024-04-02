@@ -180,4 +180,4 @@ Dado que ingreso la edad de la persona como 25 años, el peso como 60 kg y la al
 
 Cuando selecciono el género femenino y presiono el botón de calcular TMB.
 
-Entonces la calculadora muestra que la TMB para la persona es de aproximadamente 1351.50 kcal/día.
+Entonces la calculadora muestra que la TMB para la persona es de aproximadamente 1251.50 kcal/día.
