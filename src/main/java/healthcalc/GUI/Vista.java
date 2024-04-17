@@ -80,7 +80,7 @@ public class Vista extends JFrame {
         try {
             return Integer.parseInt(heightField.getText());
         } catch (NumberFormatException e) {
-            return -1; // Return -1 if parsing fails
+            return -1; 
         }
     }
 
