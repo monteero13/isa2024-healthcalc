@@ -1,72 +1,55 @@
-package healthcalc;
+package healthcalc.GUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Controlador implements ActionListener{
+public class Controlador {
+    private Vista vista;
+    private HealthCalcImpl model;
 
-	private char genero;
-	private int altura;
-	private int edad;
-	private float peso;
-	private HealthCalcImpl calc = new HealthCalcImpl();
-	private Vista vista;
-	
-	public Controlador(HealthCalcImpl calculadora, Vista gui) {
-		this.calc = calculadora;
-		this.vista = gui;
-		
-		
-	}
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		String comando = e.getActionCommand();
-		
-		switch (comando) {
-			case "HombreBT":
-				vista.getHombreBT();
-				vista.getMujerBT();
-				gender = 'H';
-				break;
-			case "MujerBT":
-				vista.getMujerBT();
-				vista.getHombreBT();
-				gender = 'M';
-				break;
-			case "getBMR":
-				try {
-					altura = Integer.parseInt(vista.getAltura().getText());
-					peso = Float.parseFloat(vista.getPeso().getText());
-					edad = (Integer) vista.getEdad().getValue();
-					
-					try {
-						float bmr = this.calc.basalMetabolicRate(peso, altura, genero, edad);
-			            vista.escribirResultadosBMR(bmr);
-					} catch (Exception e1) {
-						vista.entradaInvalida(e1.getMessage());
-					}
-				} catch (Exception e0) {
-					vista.errorNoEntrada();
-				}
-				break;
-			case "getIW":	
-				try {
-					altura = Integer.parseInt(vista.getAltura().getText());
-					
-					try {
-						float idealWeight = this.calc.idealWeight(altura, genero);
-			            vista.escribirResultadosIW(idealWeight);
-					} catch (Exception e1) {
-						vista.entradaInvalida(e1.getMessage());
-					} 
-					
-				} catch (Exception e0) {
-					vista.errorNoEntrada();
-				}
-				break;
-				
-		}
-	}
+    public Controlador(Vista vista, HealthCalcImpl model) {
+        this.vista = vista;
+        this.model = model;
 
+        this.vista.addBMRButtonListener(new BMRButtonListener());
+        this.vista.addIWButtonListener(new IWButtonListener());
+    }
+
+    class BMRButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            calculateBMR();
+        }
+    }
+
+    class IWButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            calculateIdealWeight();
+        }
+    }
+
+    private void calculateBMR() {
+        String gender = vista.getGender();
+        int height = vista.getHeightValue();
+        float weight = vista.getWeightValue();
+        int age = vista.getAgeValue();
+
+        try {
+            float bmr = model.basalMetabolicRate(weight, height, gender.charAt(0), age);
+            vista.setResult(String.format("%.2f kcal/día", bmr)); 
+        } catch (Exception ex) {
+            vista.displayErrorMessage(ex.getMessage());
+        }
+    }
+
+    private void calculateIdealWeight() {
+        int height = vista.getHeightValue();
+        String gender = vista.getGender();
+
+        try {
+            float idealWeight = model.idealWeight(height, gender.charAt(0));
+            vista.setResult(String.format("%.2f kg", idealWeight)); 
+        } catch (Exception ex) {
+            vista.displayErrorMessage(ex.getMessage());
+        }
+    }
 }

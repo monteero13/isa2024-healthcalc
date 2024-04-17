@@ -1,10 +1,9 @@
-package healthcalc;
+package healthcalc.GUI;
 
 public class Main {
     public static void main(String[] args) {
-        HealthCalcImpl calc = new HealthCalcImpl();
         Vista vista = new Vista();
-        Controlador controlador = new Controlador(calc, vista);
-        
+        HealthCalcImpl model = new HealthCalcImpl();
+        Controlador controlador = new Controlador(vista, model);
     }
 }
