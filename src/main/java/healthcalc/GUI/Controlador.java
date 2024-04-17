@@ -3,6 +3,10 @@ package healthcalc.GUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import healthcalc.HealthCalcImpl;
+
+
+
 public class Controlador {
     private Vista vista;
     private HealthCalcImpl model;
@@ -27,12 +31,11 @@ public class Controlador {
         }
     }
 
-    private void calculateBMR() {
+    void calculateBMR() {
         String gender = vista.getGender();
         int height = vista.getHeightValue();
         float weight = vista.getWeightValue();
         int age = vista.getAgeValue();
-
         try {
             float bmr = model.basalMetabolicRate(weight, height, gender.charAt(0), age);
             vista.setResult(String.format("%.2f kcal/día", bmr)); 
@@ -41,7 +44,7 @@ public class Controlador {
         }
     }
 
-    private void calculateIdealWeight() {
+    void calculateIdealWeight() {
         int height = vista.getHeightValue();
         String gender = vista.getGender();
 
