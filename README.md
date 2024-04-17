@@ -186,6 +186,10 @@ Entonces la calculadora muestra que la TMB para la persona es de aproximadamente
 
 ## Interfaz gráfica de usuario
 
-### 
+## Boceto de interfaz
 
 ![Boceto de interfaz gráfica](boceto.png)
+
+## Resultado final de interfaz
+
+![Resultado final de interfaz gráfica](interfaz.png)
