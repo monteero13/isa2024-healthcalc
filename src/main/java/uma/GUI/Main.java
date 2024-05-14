@@ -1,6 +1,8 @@
 package uma.GUI;
 
 import uma.healthcalc.HealthCalcImpl;
+import uma.healthcalc.HealthHospitalAdapter;
+import uma.healthcalc.HealthStatsProxy;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,6 +12,7 @@ public class Main {
         vista.setControlador(controlador); // Añade esta línea
         vista.mostrar(); // Añade esta línea
 
-        
+        HealthHospitalAdapter adapter = new HealthHospitalAdapter(model);
+        HealthStatsProxy proxy = new HealthStatsProxy(adapter);
     }
 }
