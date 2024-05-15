@@ -200,9 +200,9 @@ Entonces la calculadora muestra que la TMB para la persona es de aproximadamente
 
 ![Diagrama de clase patrón Singular](design_patterns/Singular.png)
 
-![Diagrama de clase patrón Adaptador](design_patterns/Adaptador.png)
+![Diagrama de clase patrón Adaptador](design_patterns/Adaptador.PNG)
 
-![Diagrama de clase patrón Representante](design_patterns/Representante.png)
+![Diagrama de clase patrón Representante](design_patterns/Representante.PNG)
 
 ![Diagrama de clase patrón Decorador](design_patterns/Decorador.png)
 
