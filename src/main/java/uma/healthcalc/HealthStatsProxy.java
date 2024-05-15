@@ -3,8 +3,7 @@ package uma.healthcalc;
 import java.util.ArrayList;
 import java.util.List;
 
-import uma.healthcalc.HealthHospital;
-import uma.healthcalc.HealthStats;
+
 
 public class HealthStatsProxy implements HealthStats, HealthHospital{
 
@@ -75,7 +74,7 @@ public class HealthStatsProxy implements HealthStats, HealthHospital{
         return nHombres + nMujeres;
     }
 
-    public double bmr(char genero, int edad, float altura, int peso){
+    public double bmr(char genero, int edad, float altura, int peso) throws Exception{
         double resultado = healthCalcImpl.bmr(genero, edad, altura, peso);
         lAlturas.add(altura);
         lEdad.add(edad);
@@ -86,9 +85,11 @@ public class HealthStatsProxy implements HealthStats, HealthHospital{
         }else{
             nMujeres++;
         }
+
+        return resultado;
     }
 
-    public int pesoIdeal(char genero, float altura){
+    public int pesoIdeal(char genero, float altura) throws Exception{
         int resultado = healthCalcImpl.pesoIdeal(genero, altura);
         lAlturas.add(altura);
         if(genero == 'H'){
@@ -96,5 +97,7 @@ public class HealthStatsProxy implements HealthStats, HealthHospital{
         }else{
             nMujeres++;
         }
+
+        return resultado;
     }
 }
