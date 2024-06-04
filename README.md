@@ -234,4 +234,6 @@ Entonces la calculadora muestra que la TMB para la persona es de aproximadamente
 ### (4) La clase HealthCalcImpl hace el trabajo de dos y se divide en CardiovascularMetrics y MetabolicMetrics. Para ello, se crean las interfaces CardiovascularMetrics y MetabolicMetrics. 
 ### (5) Crear dos interfaces, cambiar el tipo de resultado lo que supone que se haya eliminado un casting en el adaptador, el nombre del método idealWeight pasa a ser getIdealBodyWeight en 4 clases, cambiar implementación de interfaces en healthCalcImpl.
 
+## Comprobación de los nuevos test
 
+![Nuevos tests pasados](docs/Test_nuevos_pasados.png)
