@@ -3,7 +3,9 @@ package uma.GUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import uma.healthcalc.Gender;
 import uma.healthcalc.HealthCalcImpl;
+import uma.healthcalc.PersonImpl;
 
 
 
@@ -32,13 +34,13 @@ public class Controlador {
     }
 
     void calculateBMR() {
-        String gender = vista.getGender();
+        Gender gender = vista.getGender();
         int height = vista.getHeightValue();
         float weight = vista.getWeightValue();
         int age = vista.getAgeValue();
         try {
-            float bmr = model.basalMetabolicRate(weight, height, gender.charAt(0), age);
-            vista.setResult(String.format("%.2f kcal/día", bmr)); 
+            double bmr = model.basalMetabolicRate(new PersonImpl(weight,height, gender,age));
+            vista.setResult(String.format("%.2d kcal/día", bmr)); 
         } catch (Exception ex) {
             vista.displayErrorMessage(ex.getMessage());
         }
@@ -46,11 +48,11 @@ public class Controlador {
 
     void calculateIdealWeight() {
         int height = vista.getHeightValue();
-        String gender = vista.getGender();
+        Gender gender = vista.getGender();
 
         try {
-            float idealWeight = model.idealWeight(height, gender.charAt(0));
-            vista.setResult(String.format("%.2f kg", idealWeight)); 
+            double idealWeight = model.getIdealBodyWeight(new PersonImpl(height, gender));
+            vista.setResult(String.format("%.2d kg", idealWeight)); 
         } catch (Exception ex) {
             vista.displayErrorMessage(ex.getMessage());
         }
