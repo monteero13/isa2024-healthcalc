@@ -40,7 +40,7 @@ public class Controlador {
         int age = vista.getAgeValue();
         try {
             double bmr = model.basalMetabolicRate(new PersonImpl(weight,height, gender,age));
-            vista.setResult(String.format("%.2d kcal/día", bmr)); 
+            vista.setResult(String.format("%.2f kcal/día", bmr)); 
         } catch (Exception ex) {
             vista.displayErrorMessage(ex.getMessage());
         }
@@ -52,7 +52,7 @@ public class Controlador {
 
         try {
             double idealWeight = model.getIdealBodyWeight(new PersonImpl(height, gender));
-            vista.setResult(String.format("%.2d kg", idealWeight)); 
+            vista.setResult(String.format("%.2f kg", idealWeight)); 
         } catch (Exception ex) {
             vista.displayErrorMessage(ex.getMessage());
         }
