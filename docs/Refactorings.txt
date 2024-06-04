@@ -1,0 +1,32 @@
+# Refactorings
+
+(1) el nombre del “bad smell” 
+(2) el/los refactorings aplicados para resolverlo 
+(3) el tipo/categoría del refactoring (class refactoring, method refactoring, attribute refactoring)
+(4) una breve descripción del cambio que ha realizado en su proyecto 
+(5) número de cambios manuales que has tenido que hacer para aplicar el refactoring
+
+## Refactoring 1
+
+### (1) Uso de tipos primitivos para representar datos que tienen un conjunto limitado de valores posibles en el atributo Gender
+### (2) Introducción de tipo de enumeración
+### (3) Attribute refactoring
+### (4) La calculadora atenderá el género como una clase del tipo enum donde se tienen dos opciones FEMALE y MALE, en lugar de usar los caracteres "h" y "m"
+### (5) Crear una clase enumerate, cambiar de char a enum en 3 y su interfaz. Test cambiados. Total:6
+
+## Refactoring 2
+
+### (1) Long Parameter List - Person
+### (2) Pasar una larga lista de atributos a una clase que las contenga
+### (3)	Class refactoring
+### (4)	Se crea una interfaz llamada Person que contenga los parámetros weight, height, gender y age. Tras esto, se crea una clase con el mismo nombre que implemente la interfaz.
+### (5) Crear la interfaz Person, crear la clase que implementa la interfaz, cambiar argumentos de los métodos al utilizar la clase PersonImpl, cambiar la implementación de los métodos en la clase healthCalcImpl al tener que escoger los atributos a partir de la clase PersonImpl.
+
+## Refactoring 3
+
+### (1) Large interface - HealthCalcImpl
+### (2) Segregación de interfaz
+### (3) Class refactoring
+### (4) La clase HealthCalcImpl hace el trabajo de dos y se divide en CardiovascularMetrics y MetabolicMetrics. Para ello, se crean las interfaces CardiovascularMetrics y MetabolicMetrics. 
+### (5) Crear dos interfaces, cambiar el tipo de resultado lo que supone que se haya eliminado un casting en el adaptador, el nombre del método idealWeight pasa a ser getIdealBodyWeight en 4 clases, cambiar implementación de interfaces en healthCalcImpl.
+
