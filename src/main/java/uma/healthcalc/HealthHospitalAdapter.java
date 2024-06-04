@@ -13,7 +13,7 @@ public class HealthHospitalAdapter implements HealthHospital{
         int alt = (int) altura * 100;
         float pes = peso/1000;
         
-        resultado = (double) healthCalcImpl.basalMetabolicRate(new PersonImpl(peso,alt,pasarGen(genero),edad));
+        resultado = (double) healthCalcImpl.basalMetabolicRate(new PersonImpl(pes,alt,pasarGen(genero),edad));
         
         return resultado;
     }
