@@ -15,6 +15,9 @@ import java.awt.Font;
 import java.awt.event.ActionListener;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
+
+import uma.healthcalc.Gender;
+
 import javax.swing.JButton;
 
 public class Vista {
@@ -178,11 +181,11 @@ public class Vista {
         frame.getContentPane().setLayout(groupLayout);
     }
     
-    public String getGender() {
+    public Gender getGender() {
         if (BThombre.isSelected()) {
-            return "H";
+            return Gender.MALE;
         } else if (BTmujer.isSelected()) {
-            return "M";
+            return Gender.FEMALE;
         } else {
             return null;
         }
