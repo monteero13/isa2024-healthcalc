@@ -8,7 +8,7 @@ public class HealthHospitalDecorator implements HealthHospital{
         this.healthCalcImpl = hci;
     }
 
-    public int pesoIdeal(char genero, float altura){
+    public int pesoIdeal(char genero, float altura) throws Exception{
         return healthCalcImpl.pesoIdeal(genero, altura);
     }
 

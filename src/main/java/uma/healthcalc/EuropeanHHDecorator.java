@@ -8,7 +8,7 @@ public class EuropeanHHDecorator extends HealthHospitalDecorator {
     }
 
    
-    public int pesoIdeal(char genero, float altura){
+    public int pesoIdeal(char genero, float altura) throws Exception{
         int resultado = super.pesoIdeal(genero, altura);
         //String mensaje = mostrarMensaje(genero, altura, 0, 0, (double) resultado);
         //mensajeToString(mensaje);
