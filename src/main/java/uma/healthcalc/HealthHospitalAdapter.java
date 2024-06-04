@@ -13,7 +13,7 @@ public class HealthHospitalAdapter implements HealthHospital{
         int alt = (int) altura * 100;
         float pes = peso/1000;
         
-        resultado = (double) healthCalcImpl.basalMetabolicRate(pes, alt, genero, edad);
+        resultado = (double) healthCalcImpl.basalMetabolicRate(new PersonImpl(peso,alt,pasarGen(genero),edad));
         
         return resultado;
     }
@@ -23,11 +23,20 @@ public class HealthHospitalAdapter implements HealthHospital{
         int resultado = 0;
         int alt = (int) altura * 100;
         
-        resultado = (int) healthCalcImpl.idealWeight(alt, genero) * 1000;
-
+        resultado = (int) healthCalcImpl.getIdealBodyWeight(new PersonImpl(alt, pasarGen(genero))) * 1000;
+        
         return resultado;
     }
 
+    public Gender pasarGen(char genero){
+        if(genero == 'h'){
+            return Gender.MALE;
+        } else if (genero == 'm'){
+            return Gender.FEMALE;
+        } else{
+            throw new IllegalArgumentException();
+        }
+    }
     
 }
 
